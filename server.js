@@ -17,11 +17,6 @@ const auth = require('./middlewares/authorization');
 // Instanciate server
 const app = express();
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
-const socketR = require('./socket/socket.io.request');
-io.on('connection', (client) => {
-  socketR.aurelien_request(client);
-});
 
 // Cors request
 app.use(cors())
